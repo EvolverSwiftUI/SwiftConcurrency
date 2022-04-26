@@ -90,6 +90,7 @@ class DoTryCatchThrowsBootcampViewModel: ObservableObject {
         }
          */
         
+        /*
         // here we need to take care of error
         // and also need to handle errors properly
         // so used try
@@ -99,14 +100,40 @@ class DoTryCatchThrowsBootcampViewModel: ObservableObject {
         } catch {
             self.text = error.localizedDescription
         }
+        */
         
+        /*
         // here we don't care about error
         // so used try?
         let newTitle = try? manager.getTitle4()
         if let newTitle = newTitle {
             self.text = newTitle
         }
+        */
         
+        /*
+        do {
+            
+            let newTitle = try? manager.getTitle3()
+            // here even this above line fail, it won't throw errors
+            // due to that optional try syntax
+            // just it moves to next line
+            if let newTitle = newTitle {
+                self.text = newTitle
+            }
+            
+            let newTitle2 = try manager.getTitle4()
+            self.text = newTitle2
+        } catch {
+            self.text = error.localizedDescription
+        }
+         */
+        
+        // here we use implicitly try optional
+        // so used try!
+        // but not recommended to use
+        let newTitle = try! manager.getTitle4()
+        self.text = newTitle
         
     }
 }
