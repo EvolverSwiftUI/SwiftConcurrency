@@ -1,6 +1,6 @@
 # SwiftConcurrency
 
-Ihe 3 main ways to write asynchronous code in Swift. We will download an image using:
+The 3 main ways to write asynchronous code in Swift. We will download an image using:
 1. @escaping closures
 2. Combine
 3. Async / Await
