@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 class DownloadImageAsyncImageLoader {
     
@@ -44,20 +45,48 @@ class DownloadImageAsyncImageLoader {
         }
         .resume()
     }
+    
+    // As same as Result type,
+    // here also AnyPublisher also generic type
+    // So we need to mention
+    // the success type and failure types as well
+    // in angular braces
+    func downloadWithCombine() -> AnyPublisher<UIImage?, Error> {
+        URLSession.shared.dataTaskPublisher(for: url)
+            .map(handleResponse)
+            .mapError({ $0 })
+            .eraseToAnyPublisher()
+    }
 }
 
 class DownloadImageAsyncViewModel: ObservableObject {
     
     @Published var image: UIImage? = nil
     let loader = DownloadImageAsyncImageLoader()
+    
+    var cancellables = Set<AnyCancellable>()
 
     func fetchImage() {
 //        self.image = UIImage(systemName: "heart.fill")
-        loader.downloadWithEscaping { [weak self] image, error in
-            DispatchQueue.main.async {
+        
+//        loader.downloadWithEscaping { [weak self] image, error in
+//            DispatchQueue.main.async {
+//                self?.image = image
+//            }
+//        }
+        
+        loader.downloadWithCombine()
+            .receive(on: DispatchQueue.main)
+            .sink { _ in
+                
+            } receiveValue: { [weak self] image in
+                //  bcz we used .receive in combine way
+                //  so we can put this syntax in comment
+                //  DispatchQueue.main.async {
+                //  }
                 self?.image = image
             }
-        }
+            .store(in: &cancellables)
     }
 }
 
