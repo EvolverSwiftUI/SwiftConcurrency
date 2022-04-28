@@ -12,6 +12,7 @@
 		7F0A27422818602300B6FCA4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F0A27412818602300B6FCA4 /* Assets.xcassets */; };
 		7F0A27452818602300B6FCA4 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F0A27442818602300B6FCA4 /* Preview Assets.xcassets */; };
 		7F0A274C2818608B00B6FCA4 /* DoTryCatchThrowsBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F0A274B2818608B00B6FCA4 /* DoTryCatchThrowsBootcamp.swift */; };
+		7F1A4CCD281A41EC00CB39FA /* DownloadImageAsync.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1A4CCC281A41EC00CB39FA /* DownloadImageAsync.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		7F0A27412818602300B6FCA4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		7F0A27442818602300B6FCA4 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		7F0A274B2818608B00B6FCA4 /* DoTryCatchThrowsBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoTryCatchThrowsBootcamp.swift; sourceTree = "<group>"; };
+		7F1A4CCC281A41EC00CB39FA /* DownloadImageAsync.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DownloadImageAsync.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				7F0A273D2818602100B6FCA4 /* SwiftConcurrencyApp.swift */,
 				7F0A273F2818602100B6FCA4 /* ContentView.swift */,
 				7F0A274B2818608B00B6FCA4 /* DoTryCatchThrowsBootcamp.swift */,
+				7F1A4CCC281A41EC00CB39FA /* DownloadImageAsync.swift */,
 				7F0A27412818602300B6FCA4 /* Assets.xcassets */,
 				7F0A27432818602300B6FCA4 /* Preview Content */,
 			);
@@ -140,6 +143,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				7F1A4CCD281A41EC00CB39FA /* DownloadImageAsync.swift in Sources */,
 				7F0A274C2818608B00B6FCA4 /* DoTryCatchThrowsBootcamp.swift in Sources */,
 				7F0A27402818602100B6FCA4 /* ContentView.swift in Sources */,
 				7F0A273E2818602100B6FCA4 /* SwiftConcurrencyApp.swift in Sources */,
