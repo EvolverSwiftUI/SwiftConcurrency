@@ -13,10 +13,20 @@ class TaskBootcampViewModel: ObservableObject {
     @Published var image2: UIImage? = nil
 
     func fetchImage() async {
+        
+//        for x in [String]() {
+//            try? Task.checkCancellation()
+//        }
+        
+        
+        try? await Task.sleep(nanoseconds: 5_000_000_000)
         do {
             let url = URL(string: "https://picsum.photos/200")!
             let (data, _) = try await URLSession.shared.data(from: url, delegate: nil)
-            self.image = UIImage(data: data)
+            await MainActor.run(body: {
+                self.image = UIImage(data: data)
+                debugPrint("IMAGE RETURNED SUCCESSFULLY.")
+            })
         } catch {
             debugPrint("Error : \(error.localizedDescription)")
         }
@@ -26,7 +36,9 @@ class TaskBootcampViewModel: ObservableObject {
         do {
             let url = URL(string: "https://picsum.photos/200")!
             let (data, _) = try await URLSession.shared.data(from: url, delegate: nil)
-            self.image2 = UIImage(data: data)
+            await MainActor.run(body: {
+                self.image2 = UIImage(data: data)
+            })
         } catch {
             debugPrint("Error : \(error.localizedDescription)")
         }
@@ -34,9 +46,25 @@ class TaskBootcampViewModel: ObservableObject {
 
 }
 
+struct TaskBootcampHomeView: View {
+    
+    
+    
+    var body: some View {
+        NavigationView {
+            ZStack {
+                NavigationLink("TAP HERE") {
+                    TaskBootcamp()
+                }
+            }
+        }
+    }
+}
+
 struct TaskBootcamp: View {
     
     @StateObject private var viewModel = TaskBootcampViewModel()
+    @State var fetchImageTask: Task<(), Never>? = nil
     
     var body: some View {
         VStack {
@@ -56,12 +84,19 @@ struct TaskBootcamp: View {
             }
 
         }
-        .onAppear {
-            //Task {
-            //    debugPrint(Thread.current)
-            //    debugPrint(Task.currentPriority)
-            //    await viewModel.fetchImage()
-            //}
+        .task {
+            await viewModel.fetchImage()
+        }
+        
+        //.onDisappear() {
+        //    fetchImageTask?.cancel()
+        //}
+        //.onAppear {
+        //    fetchImageTask = Task {
+        //        debugPrint(Thread.current)
+        //        debugPrint(Task.currentPriority)
+        //        await viewModel.fetchImage()
+        //    }
             //Task {
             //    await viewModel.fetchImage()
             //
@@ -112,12 +147,12 @@ struct TaskBootcamp: View {
             
             
 
-        }
+        //}
     }
 }
 
 struct TaskBootcamp_Previews: PreviewProvider {
     static var previews: some View {
-        TaskBootcamp()
+        TaskBootcampHomeView()
     }
 }
