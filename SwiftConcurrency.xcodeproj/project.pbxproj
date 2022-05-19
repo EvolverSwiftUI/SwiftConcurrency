@@ -18,6 +18,7 @@
 		7F62781A2820FDCF0019A718 /* AsyncAwaitBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F6278192820FDCF0019A718 /* AsyncAwaitBootcamp.swift */; };
 		7F72F53F28328686002903B4 /* CheckedContinuationBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F72F53E28328686002903B4 /* CheckedContinuationBootcamp.swift */; };
 		7F806019282AB52900CDBC8D /* AsyncLetBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F806018282AB52900CDBC8D /* AsyncLetBootcamp.swift */; };
+		7FD3F83728352F14003B7C63 /* StructClassActorBootcamp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD3F83628352F14003B7C63 /* StructClassActorBootcamp.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -33,6 +34,7 @@
 		7F6278192820FDCF0019A718 /* AsyncAwaitBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncAwaitBootcamp.swift; sourceTree = "<group>"; };
 		7F72F53E28328686002903B4 /* CheckedContinuationBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckedContinuationBootcamp.swift; sourceTree = "<group>"; };
 		7F806018282AB52900CDBC8D /* AsyncLetBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AsyncLetBootcamp.swift; sourceTree = "<group>"; };
+		7FD3F83628352F14003B7C63 /* StructClassActorBootcamp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StructClassActorBootcamp.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				7F806018282AB52900CDBC8D /* AsyncLetBootcamp.swift */,
 				7F1DC356282CF328005F326A /* TaskGroupBootcamp.swift */,
 				7F72F53E28328686002903B4 /* CheckedContinuationBootcamp.swift */,
+				7FD3F83628352F14003B7C63 /* StructClassActorBootcamp.swift */,
 				7F0A27412818602300B6FCA4 /* Assets.xcassets */,
 				7F0A27432818602300B6FCA4 /* Preview Content */,
 			);
@@ -162,6 +165,7 @@
 				7F0A274C2818608B00B6FCA4 /* DoTryCatchThrowsBootcamp.swift in Sources */,
 				7F0A27402818602100B6FCA4 /* ContentView.swift in Sources */,
 				7F72F53F28328686002903B4 /* CheckedContinuationBootcamp.swift in Sources */,
+				7FD3F83728352F14003B7C63 /* StructClassActorBootcamp.swift in Sources */,
 				7F2FB1B32822AE7D004F90E6 /* TaskBootcamp.swift in Sources */,
 				7F62781A2820FDCF0019A718 /* AsyncAwaitBootcamp.swift in Sources */,
 				7F0A273E2818602100B6FCA4 /* SwiftConcurrencyApp.swift in Sources */,
