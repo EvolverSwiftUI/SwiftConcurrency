@@ -68,7 +68,7 @@ import SwiftUI
      -
  
  ACTOR:
-     - Same as Actor, but Thread safe!
+     - Same as Class, but Thread safe!
  
  - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - -
  
