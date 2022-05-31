@@ -12,6 +12,9 @@ import SwiftUI
 
  */
 
+// Note understand well the Global Actor concept
+// Need to relearn from scratch
+
 @globalActor struct MyFirstGlobalActor {
     
     static var shared: MyNewDataManager = MyNewDataManager()
